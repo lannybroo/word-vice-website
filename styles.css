@@ -89,6 +89,24 @@ a:hover { text-decoration: underline; }
 .app-store-badge:hover { text-decoration: none; }
 .app-store-badge img { width: 190px; height: auto; }
 
+/* Pre-launch: the badge is shown but is not a link, because there is nothing
+   to link to yet. Held back so it reads as "not yet" rather than "broken".
+   When the app ships, drop .is-pending and restore the <a href> wrapper. */
+.app-store-badge.is-pending { cursor: default; }
+.app-store-badge.is-pending img { opacity: 0.45; filter: saturate(0.4); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .unlock { margin: 14px 0 0; font-size: 14px; color: var(--ink); max-width: 34em; }
 .meta { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
 
