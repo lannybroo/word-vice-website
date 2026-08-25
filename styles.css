@@ -1,4 +1,4 @@
-/* Word Vice — site styles. Warm cream ground and deep brown ink from the app,
+/* Word Vice site styles. Warm cream ground and deep brown ink from the app,
    one hot red accent. Kept deliberately plain and compact, in the same spirit
    as mixlet.app: system fonts, small type, flat surfaces, tight rhythm. */
 
@@ -55,7 +55,7 @@ a:hover { text-decoration: underline; }
 
 /* ---------- hero ---------- */
 
-/* Generous lead-in above the wordmark — the title is the loudest thing on the
+/* Generous lead-in above the wordmark. The title is the loudest thing on the
    page and needs room to land before the subtitle picks up. */
 .hero { padding-top: 40px; }
 
@@ -70,10 +70,23 @@ a:hover { text-decoration: underline; }
 
 .subtitle { margin: 0 0 8px; font-size: 17px; color: var(--muted); }
 
+/* The one-line explanation of the whole game, sitting between the subtitle and
+   the supporting copy. The punchline takes the accent so the eye lands on it. */
+.payoff {
+  margin: 16px 0 14px;
+  font-size: clamp(21px, 2.5vw, 26px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.payoff span { color: var(--accent); }
+
 .tagline { margin: 0 0 10px; color: var(--muted); }
 
 /* Groups the badge with the terms it comes with, so the offer reads as one
-   thing. Shrink-wrapped, not full-bleed — an empty-looking box would be worse
+   thing. Shrink-wrapped, not full-bleed; an empty-looking box would be worse
    than no box. */
 .cta {
   display: inline-block;
@@ -88,7 +101,7 @@ a:hover { text-decoration: underline; }
 .cta .app-store-badge { margin-top: 0; }
 .cta .coming { margin-top: 14px; }
 
-/* Apple's official badge artwork — do not restyle or recolor it. */
+/* Apple's official badge artwork. Do not restyle or recolor it. */
 .app-store-badge { display: inline-block; margin-top: 12px; }
 .app-store-badge:hover { text-decoration: none; }
 .app-store-badge img { width: 190px; height: auto; }
@@ -112,9 +125,9 @@ a:hover { text-decoration: underline; }
 }
 
 /* Availability and the offer are different kinds of fact, so they get separate
-   lines — tight to each other, looser from the spec line below. */
+   lines, tight to each other and looser from the spec line below. */
 .coming { margin: 14px 0 0; font-size: 14px; color: var(--ink); }
-/* Three scannable terms rather than a paragraph — next to a download button
+/* Three scannable terms rather than a paragraph. Next to a download button
    people read the shape, not the sentence. Small accent dots instead of the
    browser's bullets, to stay in the site's palette. */
 .terms {
@@ -165,7 +178,7 @@ a:hover { text-decoration: underline; }
 
 /* ---------- sections ---------- */
 
-/* No rules between sections — the red 27px headings carry the break, and
+/* No rules between sections. The red 27px headings carry the break, and
    whitespace does the rest. */
 section {
   margin: 0;
