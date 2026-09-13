@@ -9,8 +9,8 @@
   --raised: #FFFFFF;  /* lifted surfaces above the cream ground */
   --ink: #111111;     /* Ink */
   --muted: #6f5f56;
-  --accent: #C8102E;  /* Vice Red */
-  --line: #E0CEAF;    /* Sand, the app icon's ground */
+  --accent: #DC1229;  /* Vice Red */
+  --line: #E8D9C0;    /* Sand, the app icon's ground */
   --rounded: ui-rounded, "SF Pro Rounded", "Avenir Next", -apple-system,
     BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
