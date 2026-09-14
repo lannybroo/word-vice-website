@@ -352,11 +352,18 @@ figcaption {
 .footer-links { grid-column: 3; text-align: right; display: flex; gap: 14px; justify-content: flex-end; }
 .footer-links a { color: var(--muted); }
 
-/* Too narrow to wrap prose beside a 320px shot: stack it instead. */
+/* Tablets keep the side-by-side hero with a narrower shot; every iPad in
+   portrait (744-834px) still has room for it. */
 @media (max-width: 899px) {
-  .hero { display: flex; flex-direction: column; padding-top: 28px; }
+  .hero { padding-top: 28px; }
+  .hero-shot { width: 250px; margin: 0 0 22px 32px; }
+}
+
+/* Too narrow to wrap prose beside the shot: stack it instead. */
+@media (max-width: 700px) {
+  .hero { display: flex; flex-direction: column; }
   .hero > div { order: -1; max-width: 34em; }
-  .hero-shot { float: none; width: 260px; margin: 26px auto 20px; }
+  .hero-shot { float: none; width: 240px; margin: 26px auto 20px; }
 }
 
 @media (max-width: 760px) {
