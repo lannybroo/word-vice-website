@@ -327,6 +327,11 @@ figcaption {
 
 .footer-credit { grid-column: 1; }
 
+/* The sister app in its own sunset pink and sky blue, each deepened to read
+   at footer size on the cream. */
+.word-nice { color: #2F6E9C; font-weight: 600; }
+.word-nice span { color: #B83D66; }
+
 .footer-mark { grid-column: 2; text-align: center; }
 
 .footer-badge {
