@@ -165,12 +165,14 @@ a:hover { text-decoration: underline; }
 }
 
 /* The hero capture is a full-height device screenshot with dead space below the
-   found-words list; crop to the part that carries the game. */
+   found-words list; crop to the part that carries the game. The captures carry
+   the device's own black corner mask, so the radius is the device's (200px on a
+   1320px-wide screen), given as width / height percentages to stay round. */
 .hero-shot img {
-  aspect-ratio: 1206 / 2250;
+  aspect-ratio: 1320 / 2700;
   object-fit: cover;
   object-position: top;
-  border-radius: 24px;
+  border-radius: 15.2% / 7.4%;
   box-shadow:
     0 1px 0 rgba(17, 17, 17, 0.16),
     0 2px 5px rgba(17, 17, 17, 0.07),
@@ -272,7 +274,7 @@ figure { margin: 0; }
 figure img { width: 100%; border-radius: 10px; }
 
 .shots img {
-  border-radius: 16px;
+  border-radius: 15.2% / 7%;
   box-shadow:
     0 1px 0 rgba(17, 17, 17, 0.14),
     0 2px 5px rgba(17, 17, 17, 0.06),
