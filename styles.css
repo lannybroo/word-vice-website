@@ -272,6 +272,7 @@ p { margin: 0 0 10px; }
 figure { margin: 0; }
 
 figure img { width: 100%; border-radius: 10px; }
+.lineup img { border-radius: 0; }
 
 .shots img {
   border-radius: 15.2% / 7%;
