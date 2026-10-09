@@ -293,6 +293,9 @@ p { margin: 0 0 10px; }
 figure { margin: 0; }
 
 figure img { width: 100%; }
+/* The small devices on the left leave the lineup's top corner empty, so on a
+   wide page the heading sits in it and the row costs less height. */
+@media (min-width: 700px) { .lineup { margin-top: calc(-11% + 10px); } }
 
 figcaption {
   margin-top: 6px;
