@@ -11,6 +11,7 @@
   --muted: #6f5f56;
   --accent: #DC1229;  /* Vice Red */
   --line: #E8D9C0;    /* Sand, the app icon's ground */
+  --case: #4a4441;    /* the charcoal phone edge drawn around each capture */
   --rounded: ui-rounded, "SF Pro Rounded", "Avenir Next", -apple-system,
     BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
@@ -190,7 +191,9 @@ a:hover { text-decoration: underline; }
   aspect-ratio: 1320 / 2700;
   object-fit: cover;
   object-position: top;
-  border-radius: 15.2% / 7.4%;
+  padding: 3px;
+  background: var(--case);
+  border-radius: 15.9% / 7.7%;
   box-shadow:
     0 1px 0 rgba(17, 17, 17, 0.16),
     0 2px 5px rgba(17, 17, 17, 0.07),
@@ -253,6 +256,54 @@ p { margin: 0 0 10px; }
 }
 
 .card .glyph { font-size: 22px; line-height: 1; margin-bottom: 8px; }
+.card .glyph svg { display: block; color: var(--accent); }
+
+/* The Duo card is two columns wide where there are two, with a whole folded
+   Duo standing beside the words. */
+.duo-card { display: flex; align-items: center; gap: 20px; }
+.duo-card > div { flex: 1; }
+.duo-card { --duo: 124px; --prop: calc(var(--duo) * 1.12); --bezel: 2px; }
+/* Folded shut: the hinge side is nearly square, the outer side round. */
+.duo-card img {
+  box-sizing: content-box;
+  width: var(--duo); height: auto;
+  padding: var(--bezel);
+  background: var(--case);
+  border-radius: calc(var(--duo) * 0.04) calc(var(--duo) * 0.2) calc(var(--duo) * 0.2) calc(var(--duo) * 0.04);
+  filter: drop-shadow(0 5px 12px rgba(17, 17, 17, 0.16));
+}
+/* The same phone propped up like a laptop: one capture drawn as two halves,
+   the lower one lying flat and widening toward the reader. */
+.duo-propped {
+  width: calc(var(--prop) + 2 * var(--bezel));
+  margin: 0 10px;
+  filter: drop-shadow(0 5px 12px rgba(17, 17, 17, 0.16));
+}
+.duo-propped span {
+  display: block;
+  height: calc(var(--prop) * 0.7106 + var(--bezel));
+  border: var(--bezel) solid var(--case);
+  border-bottom-width: 1px;
+  border-radius: calc(var(--prop) * 0.1) calc(var(--prop) * 0.1) 0 0;
+  background: var(--case) url(images/wordvice-duo-laptop-crush.png) top / 100% auto no-repeat;
+}
+/* The flat half is foreshortened, so its box gives back the height it no
+   longer fills and the pair stays centered. */
+.duo-propped span + span {
+  border-width: 0 var(--bezel) var(--bezel);
+  border-radius: 0 0 calc(var(--prop) * 0.1) calc(var(--prop) * 0.1);
+  background-position: bottom;
+  transform-origin: top;
+  transform: perspective(calc(var(--prop) * 2.9)) rotateX(48deg);
+  margin-bottom: calc(var(--prop) * -0.13);
+}
+@media (min-width: 560px) { .duo-card { grid-column: span 2; } }
+.duo-pair { display: flex; align-items: center; gap: 8px; }
+/* On a phone the words go on top and the two phones stand beneath. */
+@media (max-width: 559px) {
+  .duo-card { flex-direction: column; align-items: stretch; gap: 14px; }
+  .duo-pair { justify-content: center; }
+}
 
 /* Borrowed from the game's found-words list: label left, score right, on a
    tinted row. The joke only works if it looks like real scoring, so the chip
@@ -274,7 +325,6 @@ p { margin: 0 0 10px; }
 
 .score .plus { font-weight: 700; font-size: 13px; color: var(--accent); }
 
-.note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
 .card h3 { margin: 0 0 4px; font-size: 16px; font-weight: 700; }
 .card p { margin: 0; font-size: 15px; color: var(--muted); }
 
@@ -293,7 +343,9 @@ figure img { width: 100%; border-radius: 10px; }
 .lineup img { border-radius: 0; }
 
 .shots img {
-  border-radius: 15.2% / 7%;
+  padding: 3px;
+  background: var(--case);
+  border-radius: 15.9% / 7.3%;
   box-shadow:
     0 1px 0 rgba(17, 17, 17, 0.14),
     0 2px 5px rgba(17, 17, 17, 0.06),
